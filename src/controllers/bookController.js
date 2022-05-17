@@ -80,7 +80,7 @@ const createBook = async function (req, res) {
     // if subcategory is an array then validating each element
     if (Array.isArray(subcategory)) {
       for (let i = 0; i < subcategory.length; i++) {
-        element = subcategory[i];
+       let element = subcategory[i];
 
         if (!isValid(element)) {
           return res.status(400).send({ status: false, message: 'subcategory is (required field) format like: ["Fiction","Classic"]' });
@@ -211,7 +211,7 @@ let getBooksById = async (req, res) => {
 
 
     //sending successful response with new object
-    return res.status(200).send({ status: true, message: "Books list", data: booksWithRevie });
+    return res.status(200).send({ status: true, message: "Books list", data: booksWithReview });
   } catch (err) {
     res.status(500).send({ status: false, message: "Internal Server Error", error: err.message })
   }

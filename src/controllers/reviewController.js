@@ -11,7 +11,7 @@ const createReview = async function (req, res) {
     const reviewData = req.body;
     // if request body is empty
     if (!isValidReqBody(reviewData)) {
-      return res.status(400).send({ status: false, message: "Please provide the book details" });
+      return res.status(400).send({ status: false, message: "Please provide the review details" });
     }
 
     //taking bookId in path params of which user want to review

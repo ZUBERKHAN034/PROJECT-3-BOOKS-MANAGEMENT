@@ -35,7 +35,7 @@ const registerUser = async function (req, res) {
       return res.status(400).send({ status: false, message: "Please enter valid title" });
     }
 
-    // if phone is empty
+    // if name is empty
     if (!isValid(name)) {
       return res.status(400).send({ status: false, message: "Please enter name(required field)" });
     }
